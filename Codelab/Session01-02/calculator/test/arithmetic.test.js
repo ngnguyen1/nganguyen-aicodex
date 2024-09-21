@@ -307,4 +307,40 @@ describe('Arithmetic', function () {
                 })
         });
     });
+
+    // add tests for Percentage
+    describe('Percentage', function () {
+        it('calculates the percentage of a positive integer', function (done) {
+            request.get('/arithmetic?operation=percentage&operand1=21&operand2=50')
+                .expect(200)
+                .end((err, res) => {
+                    expect(res.body).to.eql({result: 10.5});
+                    done();
+                })
+        });
+        it('calculates the percentage of a negative integer', function (done) {
+            request.get('/arithmetic?operation=percentage&operand1=-21&operand2=50')
+                .expect(200)
+                .end((err, res) => {
+                    expect(res.body).to.eql({result: -10.5});
+                    done();
+                })
+        });
+        it('calculates the percentage of a floating point number', function (done) {
+            request.get('/arithmetic?operation=percentage&operand1=2.5&operand2=50')
+                .expect(200)
+                .end((err, res) => {
+                    expect(res.body).to.eql({result: 1.25});
+                    done();
+                })
+        });
+        it('calculates the percentage of a negative floating point number', function (done) {
+            request.get('/arithmetic?operation=percentage&operand1=-2.5&operand2=50')
+                .expect(200)
+                .end((err, res) => {
+                    expect(res.body).to.eql({result: -1.25});
+                    done();
+                })
+        });
+    });
 });
