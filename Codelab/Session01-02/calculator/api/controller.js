@@ -21,6 +21,7 @@ exports.calculate = function(req, res) {
       }
       return Number(a) / Number(b); 
     },
+    'power': function(a, b) { return Math.pow(Number(a), Number(b)); }
   };
 
   /**
