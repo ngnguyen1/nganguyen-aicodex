@@ -158,7 +158,7 @@ BODY {
 
 .box {
     box-sizing: border-box;
-    top: 220px;
+    top: 210px;
     width: 250px;
     position: absolute;
 }

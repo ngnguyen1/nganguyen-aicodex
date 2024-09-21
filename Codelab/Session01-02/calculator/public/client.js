@@ -24,7 +24,15 @@ function calculate(operand1, operand2, operation) {
         case '+':
             uri += "?operation=add";
             break;
-
+        case '-':
+            uri += "?operation=subtract";
+            break;
+        case '*':
+            uri += "?operation=multiply";
+            break;
+        case '/':
+            uri += "?operation=divide";
+            break;
         default:
             setError();
             return;
